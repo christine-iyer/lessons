@@ -1,5 +1,35 @@
 ## SEI Assignments
 
+**Markdown Tables**
+
+<details>
+     <summary>Placeholder</summary>
+<table>
+<tr>
+<th>html</th>
+<th>js</th>
+<th>css</th>
+</tr>
+<tr>
+<td>
+
+```html
+```
+</td>
+<td>
+
+```js
+```
+</td>
+<td>
+
+```css
+```
+</td>
+</tr>
+</table>
+</details>
+
 **[Week 1 Day 3: Loops and Conditionals](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-1/day-3/labs/loops-and-conditionals-lab/)**
 
 **[]()**
@@ -832,9 +862,36 @@ Code Here
 **[Week 5 Day 2: Barbie's Wardrobe](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-2/walkthrough)**
 
 <details>
-     <summary>Barbie's Wardrobe Code</summary>
-Code Here
+     <summary>Placeholder</summary>
+<table>
+<tr>
+<th>html</th>
+<th>js</th>
+<th>css</th>
+</tr>
+<tr>
+<td>
+
+```html
+```
+</td>
+<td>
+
+```js
+```
+</td>
+<td>
+
+```css
+```
+</td>
+</tr>
+</table>
 </details>
+
+
+
+
 
 **[Week 5 Day 2: Modals](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-3/modal/)**
 
@@ -881,7 +938,7 @@ Code Here
 **[Week 6 Day 2: Save the Universe](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-6/day-2/hw)**
 
 <details>
-     <summary>Save the Universer Code</summary>
+     <summary>Save the Universe Code</summary>
 Code Here
 </details>
 
@@ -944,10 +1001,8 @@ Code Here
 </details>
 
 **[Week 12 Day 3: Written Homework - Answer The Following](https://sfs-flex-evelyn.herokuapp.com/backend-fundamentals/week-12/day-3/)**
-<details>
-     <summary>Written HW Solution</summary>
-Code Here
-</details>
+
+
 **[]()**
 <details>
      <summary></summary>
@@ -956,14 +1011,92 @@ Code Here
 
 ```
 </details>
-**[]()**
+
+
+**[Written HW: Week 18 Day 1](https://sfs-flex-evelyn.herokuapp.com/react/week-18/day-1/)**
+
+* Review the [React Beta Docs Quick Start](https://beta.reactjs.org/learn)
+
+* Look at the [Counter Example](https://codesandbox.io/s/prod-glade-z46mqe) in particular and the accompanying diagram
+* Explain what you believe is happenning in 100 words or less
+* Submit your answer in a github markdown.
+
 <details>
-     <summary></summary>
+     <summary>Counters</summary>
+<table>
+<tr>
+<th>update separately</th>
+<th>update together</th>
+</tr>
+<tr>
+<td>
 
 ```js
+import { useState } from 'react';
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
+  );
+}
+
 
 ```
+</td>
+<td>
+
+```js
+import { useState } from 'react';
+
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
+
+```
+</td>
+
+</tr>
+</table>
 </details>
+
 **[]()**
 <details>
      <summary></summary>
