@@ -1,6 +1,19 @@
 ## SEI Assignments
+# Table of Contents
 
-**Markdown Tables**
+[Markdown Tables](#example)
+[Week 1 Day 3: Loops and Conditionals](#example)
+[Example2](#example2)
+[Third Example](#third-example)
+[Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+
+
+## Example
+## Example2
+## Third Example
+## [Fourth Example](http://www.fourthexample.com) 
+
+**[Markdown Tables]**
 
 <details>
      <summary>Placeholder</summary>
@@ -1104,14 +1117,7 @@ wardrobeButtons.forEach((button) => {
 })
 }
 barbie.render()
-
-
-
 // Button Event Listeners
-
-
-
-
 const rentalButton = document.getElementById('rental');
 
 rentalButton.addEventListener('click', () => {
@@ -1124,8 +1130,6 @@ rentalButton.addEventListener('click', () => {
         alert('This is a good decision unfortunately it is not your season yet sis')
     }
 })
-
-
 
 const redButton = document.getElementById('red-bottoms');
 
@@ -1172,23 +1176,231 @@ workButton.addEventListener('click', ()=>{
 
 **[Week 5 Day 2: Modals](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-3/modal/)**
 
+Modal Code
+
 <details>
-     <summary>Modal Code</summary>
+     <summary></summary>
 Code Here
+</details>
+
+<details>
+     <summary></summary>
+Code Here
+</details>
+
+<details>
+     <summary></summary>
+Code Here
+</details>
+
+**[Week 6 Day 1](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-6/day-1/landscaper)**
+
+**Landscaper**
+
+<details>
+     <summary>HTML</summary>
+
+```html
+
+```
+</details>
+<details>
+     <summary>CSS</summary>
+
+```css
+
+```
+</details>
+
+<details>
+     <summary>JS</summary>
+
+```js
+
+```
 </details>
 
 **[Week 5 Day 2: Carousel](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-3/corgi/)**
 
+Carousel Code
+
 <details>
-     <summary>Carousel Code</summary>
-Code Here
+     <summary>HTML</summary>
+
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CORGI CAROUSEL</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- =========== CAROUSEL TOP ============== -->
+      <img src="images/carousel.png" alt="">
+      <h1>CORGI CAROUSEL!</h1>
+      <!-- =========== CAROUSEL CONTAINER ======== -->
+      <div class="carousel-container">
+        <!-- previous button -->
+        <div class="carousel-button prev">
+          <!-- from linearicons icon font -->
+          <span class="lnr lnr-chevron-left"></span>
+        </div>
+        <!-- images -->
+        <div class="carousel-images">
+          <img src="images/corgi-cute.png" alt="corgi looking cute" class="image">
+          <img src="images/corgi-hotdog.png" alt="corgi looking cute in a hotdog costume" class="image">
+          <img src="images/corgi-goggles.png" alt="corgi looking cute in goggles" class="image">
+          <img src="images/corgi-boat.png" alt="corgi looking cute in a boat" class="image">
+        </div>
+        <!-- next button -->
+        <div class="carousel-button next">
+          <!-- from linearicons icon font -->
+          <span class="lnr lnr-chevron-right"></span>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>
+
+```
 </details>
+<details>
+     <summary>CSS</summary>
+
+```css
+body {
+  background: #f9f9f9;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container > img {
+  width: 50%;
+}
+.container > h1 {
+  font-family: 'Montserrat', impact;
+  font-weight: 800;
+  font-size: 2.5em;
+  margin-top: -1%;
+  color: #4caaa8;
+  text-shadow: 1px 1px #f2cd99;
+  letter-spacing: 2px;
+}
+/* ======= CAROUSEL SECTION ======== */
+.carousel-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.carousel-images {
+  width: 80%;
+  background: #fa8d8e;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px #f2cd99;
+
+}
+.carousel-images img {
+  /* less specific than the first of type */
+  /* //mod  */
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+}
+.carousel-images img:first-of-type {
+  /* important mod wins out because 1pt elements 1 pt for first of type  sp 021*/
+  display: block;
+}
+.carousel-button {
+  align-self: center;
+  background: #f2cd99;
+  color: #888;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px #fa8d8e;
+}
+.carousel-button:hover {
+  cursor: pointer;
+  background: #fa8d8e;
+  box-shadow: 1px 1px #f2cd99;
+  color: white;
+}
+
+```
+</details>
+
+<details>
+     <summary>JS</summary>
+
+```js
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+let currentImageIndex = 0; // current available index this must be in the global space. what image is currently showing by setting a global index counter variable:
+let previousImgIndex = 0;
+const images = document.querySelectorAll('.image')
+next.addEventListener('click', (event) => {
+     // Inside the event listener for our "next" class, set previousImgIndex to currentImgIndex, and increment currentImgIndex by 1.
+     previousImgIndex = currentImageIndex;     
+//      Next, inside the event listener for our "next" class, select the currently showing carousel image with:
+// images[previousImageIndex]
+if (currentImageIndex < images.length - 1){
+     currentImageIndex +=1
+     } else {
+          currentImageIndex = 0;
+     }
+     images[previousImgIndex].style.display = 'none';
+     images[currentImageIndex].style.display= 'block';
+})
+prev.addEventListener('click', (event)=> {
+     previousImgIndex=currentImageIndex;
+     if (currentImageIndex > 0) {
+          currentImageIndex -= 1;     
+     } else {
+          currentImageIndex = images.length -1
+}
+images[previousImgIndex].style.display = 'none';
+     images[currentImageIndex].style.display= 'block';
+})
+
+```
+</details>
+
 
 **[Week 5 Day 2: Tomagotchi Code Along](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-3/tomogatchi/)**
 
 <details>
-     <summary>Tamogatchi Code</summary>
-Code Here
+     <summary>HTML</summary>
+
+```html
+
+```
+</details>
+<details>
+     <summary>CSS</summary>
+
+```css
+
+```
+</details>
+
+<details>
+     <summary>JS</summary>
+
+```js
+
+```
 </details>
 
 **[Week 5 Day 2: Classes](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-5/day-3/classes)**
@@ -1234,9 +1446,58 @@ Code Here
 
 **[Week 6 Day 2: Save the Universe](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-6/day-2/hw)**
 
+Save the Universe Code
+
 <details>
-     <summary>Save the Universe Code</summary>
-Code Here
+     <summary>HTML</summary>
+
+```html
+
+```
+</details>
+<details>
+     <summary>CSS</summary>
+
+```css
+
+```
+</details>
+
+<details>
+     <summary>JS</summary>
+
+```js
+
+```
+</details>
+
+
+
+**[Week 6 Day 1](https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-6/day-1/landscaper)**
+
+**Landscaper**
+
+<details>
+     <summary>HTML</summary>
+
+```html
+
+```
+</details>
+<details>
+     <summary>CSS</summary>
+
+```css
+
+```
+</details>
+
+<details>
+     <summary>JS</summary>
+
+```js
+
+```
 </details>
 
 
@@ -1432,7 +1693,8 @@ console.log(filterItems(fruits, "ap")); // ['apple', 'grapes']
 console.log(filterItems(fruits, "an")); // ['banana', 'mango', 'orange']
 ```
 </details>
-**[]()**
+
+**[Luhn Algo](https://sfs-flex-evelyn.herokuapp.com/react/week-20/day-2/hw)**
 <details>
      <summary></summary>
 
